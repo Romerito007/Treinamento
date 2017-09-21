@@ -1,0 +1,20 @@
+<div class="section">
+    <div class="background-image" style="background-image : url('http://pingendo.github.io/pingendo-bootstrap/assets/blurry/800x600/13.jpg')"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+              <app-menu-admin *ngIf="authInfo?.isAdmin()"></app-menu-admin>
+              <app-login *ngIf="!authInfo?.isLoggedIn()"></app-login>
+              <app-filmes-favoritos *ngIf="authInfo?.isLoggedIn()"></app-filmes-favoritos>
+            </div>
+            <div class="col-md-9">
+                <div class="panel panel-primary text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Principal</h3>
+                    </div>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

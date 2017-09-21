@@ -1,0 +1,20 @@
+<div class="panel panel-primary text-center">
+  <div class="panel-heading">
+    <h3 class="panel-title">Autenticação</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" (ngSubmit)="enviarFormulario(form)" novalidate #form="ngForm">
+      <div class="form-group">
+        <input class="form-control" placeholder="Digite seu e-mail" type="email" name="email" #emailField="ngModel" [(ngModel)]="usuarioLogin.email"
+          required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+      </div>
+      <div class="form-group">
+        <input class="form-control" placeholder="Digite sua senha" type="password" name="senha" minlength="6" #passwordField="ngModel"
+          [(ngModel)]="usuarioLogin.senha" required>
+      </div>
+      <button type="submit" class="btn btn-block btn-primary" [disabled]="form.invalid">Entrar</button>
+    </form>
+    <br>
+    <a [routerLink]="['/cadastro-usuario']">Cadastrar</a>
+  </div>
+</div>

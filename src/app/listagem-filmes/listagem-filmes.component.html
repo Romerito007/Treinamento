@@ -1,0 +1,11 @@
+<div class="panel-body">
+  <div class="col-md-3" *ngFor="let filme of listaFilmes">
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <a [routerLink]="['/filme/', filme.$key]">
+          <img src="{{ filme.urlPoster }}" class="img-responsive">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
